@@ -32,31 +32,31 @@
           </span>
           <img src="https://lorempixel.com/185/185/people" alt="Foto Perfil" />
         </div>
-        <h1>Paulo Valente</h1>
-        <a href="https://instagram.com/paulo_vm">
+        <h1 id="userName">Paulo Valente</h1>
+        <a href="https://github.com/paulo_vm" target="_blank">
           <img src="images/github.svg" alt="Ícone GitHub" />
           paulo_vm
         </a>
 
         <p>An instructor focused on helping pople start programming for web</p>
 
-        <ul>
-          <li>
-            <a href="https://youtube.com/paulo_vm" target="bçank">
+        <ul id="socialLinks">
+          <li class="youtube">
+            <a href="https://youtube.com/paulo_vm" target="_blank">
               <img src="images/youtube.svg" alt="Ícone Youtube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://Instagram.com/paulo_vm" target="_blank">
               <img src="images/instagram.svg" alt="Ícone Instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://facebook.com/paulo_vm" target="_blank">
               <img src="images/facebook.svg" alt="Ícone Facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com/paulo_vm" target="_blank">
               <img src="images/twitter.svg" alt="Ícone Twitter" />
             </a>
@@ -64,5 +64,50 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      //Variáveis: let ou const
+      /*const name = 'Paulo Valente Maia'
+            let phone = '88994012526'
+            let accept = true
+
+            //name = 'Oi'
+            //alert(name)
+
+            let user = {
+              name: 'Paulo Valente Maia',
+              phone: '88994012526'
+            }
+
+            alert(user.name)
+
+            function showMeSomething() {
+              alert('Oi estou aqui')
+            }
+            showMeSomething()
+            */
+
+      //Const Redes Sociais
+      const linksSocialMedia = {
+        github: 'paulo_vm',
+        youtube: 'paulo_vm',
+        facebook: 'paulo_vm',
+        instagram: 'paulo_vm',
+        twitter: 'paulo_vm'
+      }
+
+      function changeSocialMediaLinks() {
+        //document.getElementById('userName').textContent = 'Paulo'
+        //userName.textContent = 'Arthur'
+        for (let li of socialLinks.children) {
+          const social = li.getAttribute('class')
+          li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
+
+          //alert(li.children[0].href)
+        }
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
